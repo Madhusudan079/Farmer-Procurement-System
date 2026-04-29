@@ -57,7 +57,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-04-25 01:17:00.103884",
+ "modified": "2026-04-25 13:55:38.243742",
  "modified_by": "Administrator",
  "module": "Farmer Procurement System",
  "name": "Farmer Registration",
@@ -79,7 +79,9 @@
  ],
  "row_format": "Dynamic",
  "rows_threshold_for_grid_search": 20,
+ "show_title_field_in_link": 1,
  "sort_field": "creation",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "title_field": "farmer_name"
 }
