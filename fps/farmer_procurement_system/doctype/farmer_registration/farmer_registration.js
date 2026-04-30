@@ -6,3 +6,13 @@
 
 // 	},
 // });
+
+frappe.ui.form.on("Farmer Registration", {
+    validate(frm) {
+        let today = frappe.datetime.get_today();
+
+        if (frm.doc.registration_date !== today) {
+            frappe.throw("Registration Date must be today's date");
+        }
+    }
+});
