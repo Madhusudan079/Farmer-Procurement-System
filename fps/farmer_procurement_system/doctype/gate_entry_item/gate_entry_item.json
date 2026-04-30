@@ -1,0 +1,69 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-04-25 12:56:30.974538",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "procurement_model",
+  "item",
+  "bag_type",
+  "total_bag",
+  "total_weight"
+ ],
+ "fields": [
+  {
+   "fieldname": "procurement_model",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Procurement Model",
+   "options": "\nDirect Farmer",
+   "reqd": 1
+  },
+  {
+   "fieldname": "item",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Item",
+   "link_filters": "[[\"Item\",\"item_group\",\"=\",\"Products\"]]",
+   "options": "Item",
+   "reqd": 1
+  },
+  {
+   "fieldname": "bag_type",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Bag Type",
+   "link_filters": "[[\"Item\",\"item_group\",\"=\",\"Bag\"]]",
+   "options": "Item"
+  },
+  {
+   "fieldname": "total_bag",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Total Bag"
+  },
+  {
+   "fieldname": "total_weight",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Total Weight"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-04-30 13:26:34.973057",
+ "modified_by": "Administrator",
+ "module": "Farmer Procurement System",
+ "name": "Gate Entry Item",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}
