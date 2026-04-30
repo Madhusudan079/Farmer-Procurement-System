@@ -231,6 +231,12 @@ app_license = "mit"
 # 	}
 # ]
 
+doc_events = {
+    "Weighment Entry": {
+        "on_update": "fps.farmer_procurement_system.doctype.weighment_entry.weighment_entry.update_procurement_status"
+    }
+}
+
 # Authentication and authorization
 # --------------------------------
 

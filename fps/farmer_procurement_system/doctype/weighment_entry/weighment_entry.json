@@ -1,0 +1,111 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "WE-.###",
+ "creation": "2026-04-27 12:49:53.350604",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "procurement_ge",
+  "gross_weight",
+  "tare_weight",
+  "column_break_fjwp",
+  "vehicle_number",
+  "status",
+  "net_weight",
+  "section_break_ommt",
+  "item"
+ ],
+ "fields": [
+  {
+   "fieldname": "procurement_ge",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Procurement GE",
+   "options": "Procurement Entry",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "procurement_ge.vehicle_number",
+   "fieldname": "vehicle_number",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Vehicle Number",
+   "reqd": 1
+  },
+  {
+   "fieldname": "gross_weight",
+   "fieldtype": "Float",
+   "label": "Gross Weight",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Status",
+   "options": "\nGross Pending\nGross Complete\nTare Pending\nTare Complete"
+  },
+  {
+   "depends_on": "eval:doc.status==\"Gross Complete\" || doc.status==\"Tare Pending\" || doc.status==\"Tare Complete\"",
+   "fieldname": "tare_weight",
+   "fieldtype": "Float",
+   "label": "Tare Weight",
+   "mandatory_depends_on": "eval:doc.status==\"Tare Pending\""
+  },
+  {
+   "depends_on": "eval:doc.status==\"Tare Complete\"",
+   "fieldname": "net_weight",
+   "fieldtype": "Data",
+   "label": "Net Weight"
+  },
+  {
+   "fieldname": "column_break_fjwp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_ommt",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "item",
+   "fieldtype": "Table",
+   "label": "Item",
+   "options": "Weighbridge Item"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-04-30 13:16:13.098141",
+ "modified_by": "Administrator",
+ "module": "Farmer Procurement System",
+ "name": "Weighment Entry",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [
+  {
+   "color": "Light Blue",
+   "title": "Unloading"
+  }
+ ]
+}

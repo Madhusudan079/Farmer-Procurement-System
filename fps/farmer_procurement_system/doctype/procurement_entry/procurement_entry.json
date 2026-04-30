@@ -1,0 +1,130 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "PRE-.####",
+ "creation": "2026-04-25 12:37:07.420404",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "entry_type",
+  "farmer_name",
+  "column_break_oooi",
+  "vehicle_number",
+  "section_break_xygq",
+  "gate_entry_item",
+  "total_bag",
+  "total_weight",
+  "status"
+ ],
+ "fields": [
+  {
+   "default": "Unloading",
+   "fieldname": "entry_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Entry Type",
+   "options": "\nUnloading\nLoading",
+   "reqd": 1
+  },
+  {
+   "fieldname": "farmer_name",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Farmer Name",
+   "options": "Farmer Registration",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "vehicle_number",
+   "fieldtype": "Link",
+   "label": "Vehicle Number",
+   "options": "Vehicle"
+  },
+  {
+   "fieldname": "total_weight",
+   "fieldtype": "Data",
+   "label": "Total Weight"
+  },
+  {
+   "fieldname": "column_break_oooi",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_xygq",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "gate_entry_item",
+   "fieldtype": "Table",
+   "label": "Gate Entry Item",
+   "options": "Gate Entry Item"
+  },
+  {
+   "fieldname": "total_bag",
+   "fieldtype": "Data",
+   "label": "Total Bag"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Status",
+   "no_copy": 1,
+   "options": "\nGate In\nUnloading\nQuality Test\nWeighing\nGate Out Pending\nCompleted\nLoading"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-04-30 13:42:32.591621",
+ "modified_by": "Administrator",
+ "module": "Farmer Procurement System",
+ "name": "Procurement Entry",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [
+  {
+   "color": "Blue",
+   "title": "Weighing"
+  },
+  {
+   "color": "Cyan",
+   "title": "Unloading"
+  },
+  {
+   "color": "Gray",
+   "title": "Quality Test"
+  },
+  {
+   "color": "Green",
+   "title": "Weighing 2"
+  },
+  {
+   "color": "Red",
+   "title": "Gate Out Pending"
+  },
+  {
+   "color": "Yellow",
+   "title": "Completed"
+  }
+ ]
+}
